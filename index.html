@@ -1,708 +1,315 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Find pickup sports near you. Soccer, basketball, pickleball. Join the Beacon waitlist.">
-  <meta name="og:title" content="Beacon - Pickup Sports Near You">
-  <meta name="og:description" content="Find your game in 60 seconds. See who's playing soccer, basketball, pickleball near you.">
-  <meta name="og:image" content="https://beacon.app/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <title>Beacon - Find Pickup Sports Near You</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #ffffff;
-      color: #000000;
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* Header */
-    header {
-      padding: 24px 0;
-      border-bottom: 1px solid #f0f0f0;
-      position: sticky;
-      top: 0;
-      background: #ffffff;
-      z-index: 100;
-    }
-
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: 700;
-      color: #000000;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .logo-dot {
-      width: 12px;
-      height: 12px;
-      background: #c2ff00;
-      border-radius: 50%;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: #000000;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: #c2ff00;
-    }
-
-    /* Hero Section */
-    .hero {
-      padding: 80px 0;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: clamp(32px, 5vw, 56px);
-      font-weight: 700;
-      margin-bottom: 16px;
-      line-height: 1.2;
-    }
-
-    .hero-highlight {
-      color: #c2ff00;
-    }
-
-    .hero p {
-      font-size: 18px;
-      color: #666666;
-      margin-bottom: 40px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* Form Section */
-    .form-section {
-      max-width: 500px;
-      margin: 0 auto 60px;
-      padding: 40px;
-      background: #f9f9f9;
-      border-radius: 12px;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: #000000;
-    }
-
-    .form-group input,
-    .form-group select {
-      width: 100%;
-      padding: 12px 16px;
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
-      font-size: 14px;
-      background: #ffffff;
-      color: #000000;
-      transition: border-color 0.2s;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus {
-      outline: none;
-      border-color: #c2ff00;
-      box-shadow: 0 0 0 3px rgba(194, 255, 0, 0.1);
-    }
-
-    .referral-code {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-      padding: 12px;
-      background: #f0f0f0;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
-
-    .referral-code-value {
-      font-family: 'Courier New', monospace;
-      font-weight: 700;
-      font-size: 16px;
-      flex: 1;
-      color: #000000;
-    }
-
-    .copy-btn {
-      padding: 6px 12px;
-      background: #c2ff00;
-      color: #000000;
-      border: none;
-      border-radius: 6px;
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    .copy-btn:hover {
-      background: #a8e600;
-    }
-
-    .submit-btn {
-      width: 100%;
-      padding: 14px;
-      background: #c2ff00;
-      color: #000000;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .submit-btn:hover {
-      background: #a8e600;
-      transform: translateY(-2px);
-    }
-
-    .submit-btn:active {
-      transform: translateY(0);
-    }
-
-    .status-message {
-      margin-top: 16px;
-      padding: 12px;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 500;
-      text-align: center;
-      display: none;
-    }
-
-    .status-message.success {
-      display: block;
-      background: #d4f4dd;
-      color: #1e7e34;
-      border: 1px solid #1fb881;
-    }
-
-    .status-message.error {
-      display: block;
-      background: #ffe6e6;
-      color: #d32f2f;
-      border: 1px solid #ff8a3d;
-    }
-
-    /* Sports Badges */
-    .sports-section {
-      text-align: center;
-      margin: 60px 0;
-    }
-
-    .sports-section h2 {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 24px;
-      color: #000000;
-    }
-
-    .sports-badges {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .sport-badge {
-      padding: 12px 24px;
-      border-radius: 24px;
-      font-size: 14px;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      border: 2px solid;
-    }
-
-    .sport-badge.soccer {
-      border-color: #1fb881;
-      color: #1fb881;
-      background: rgba(31, 184, 129, 0.1);
-    }
-
-    .sport-badge.basketball {
-      border-color: #ff8a3d;
-      color: #ff8a3d;
-      background: rgba(255, 138, 61, 0.1);
-    }
-
-    .sport-badge.pickleball {
-      border-color: #c2ff00;
-      color: #c2ff00;
-      background: rgba(194, 255, 0, 0.1);
-    }
-
-    /* Social Proof */
-    .social-proof {
-      background: #f9f9f9;
-      padding: 60px 0;
-      margin: 60px 0;
-    }
-
-    .proof-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      text-align: center;
-    }
-
-    .proof-stat {
-      padding: 20px;
-    }
-
-    .proof-stat h3 {
-      font-size: 32px;
-      font-weight: 700;
-      color: #c2ff00;
-      margin-bottom: 8px;
-    }
-
-    .proof-stat p {
-      font-size: 14px;
-      color: #666666;
-    }
-
-    .testimonials {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
-    }
-
-    .testimonial {
-      padding: 24px;
-      background: #ffffff;
-      border-radius: 8px;
-      border: 1px solid #f0f0f0;
-    }
-
-    .testimonial-text {
-      font-size: 14px;
-      color: #333333;
-      margin-bottom: 16px;
-      font-style: italic;
-    }
-
-    .testimonial-author {
-      font-weight: 600;
-      font-size: 13px;
-      color: #000000;
-    }
-
-    /* Features Section */
-    .features {
-      padding: 60px 0;
-    }
-
-    .features h2 {
-      text-align: center;
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 40px;
-      color: #000000;
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 32px;
-    }
-
-    .feature-card {
-      padding: 24px;
-      border-radius: 12px;
-      border: 1px solid #f0f0f0;
-    }
-
-    .feature-icon {
-      font-size: 32px;
-      margin-bottom: 12px;
-    }
-
-    .feature-card h3 {
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: #000000;
-    }
-
-    .feature-card p {
-      font-size: 14px;
-      color: #666666;
-    }
-
-    /* Footer */
-    footer {
-      background: #000000;
-      color: #ffffff;
-      padding: 40px 0;
-      margin-top: 80px;
-      text-align: center;
-    }
-
-    footer p {
-      font-size: 13px;
-      color: #999999;
-      margin-bottom: 8px;
-    }
-
-    footer a {
-      color: #c2ff00;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .nav-links {
-        gap: 16px;
-      }
-
-      .hero {
-        padding: 40px 0;
-      }
-
-      .form-section {
-        padding: 24px;
-      }
-
-      .sports-badges {
-        flex-direction: column;
-      }
-
-      .sport-badge {
-        justify-content: center;
-      }
-    }
-
-    /* Dark Mode */
-    @media (prefers-color-scheme: dark) {
-      body {
-        background: #0a0a0a;
-        color: #ffffff;
-      }
-
-      header {
-        background: #0a0a0a;
-        border-bottom-color: #1a1a1a;
-      }
-
-      .nav-links a {
-        color: #ffffff;
-      }
-
-      .hero p {
-        color: #b0b0b0;
-      }
-
-      .form-section {
-        background: #1a1a1a;
-      }
-
-      .form-group input,
-      .form-group select {
-        background: #2a2a2a;
-        color: #ffffff;
-        border-color: #3a3a3a;
-      }
-
-      .referral-code {
-        background: #2a2a2a;
-      }
-
-      .referral-code-value {
-        color: #ffffff;
-      }
-
-      .social-proof {
-        background: #1a1a1a;
-      }
-
-      .testimonial {
-        background: #0a0a0a;
-        border-color: #2a2a2a;
-      }
-
-      .feature-card {
-        border-color: #2a2a2a;
-      }
-
-      footer {
-        background: #1a1a1a;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Beacon | Find your game</title>
+<meta name="description" content="Pickup games near you. Join the Beacon waitlist.">
+<meta property="og:title" content="Beacon | Find your game">
+<meta property="og:description" content="Pickup games near you. Join the waitlist.">
+<meta name="theme-color" content="#F2F4F6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23B5F000'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --page: #F2F4F6;
+    --card: #FFFFFF;
+    --ink: #0B0C0E;
+    --ink2: #3F444B;
+    --ink3: #8A9099;
+    --line: #DDE1E6;
+    --soft: #F1F2F4;
+    --lime: #B5F000;
+    --lime2: #9EE000;
+    --soccer: #1FA971;
+    --hoops: #F07A2B;
+    --pickle: #3B8CF0;
+    color-scheme: light;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--page); }
+  body {
+    min-height: 100vh; display: grid; place-items: start center;
+    padding: 40px 16px 56px; color: var(--ink);
+    font: 15px/1.5 Inter, -apple-system, system-ui, sans-serif; -webkit-font-smoothing: antialiased;
+  }
+  :focus-visible { outline: 3px solid color-mix(in srgb, var(--lime2) 70%, transparent); outline-offset: 2px; }
+
+  .card {
+    width: 100%; max-width: 456px; background: var(--card); border-radius: 28px;
+    padding: 40px 28px 32px; box-shadow: 0 1px 2px rgba(10,20,30,.04), 0 24px 60px -20px rgba(10,20,30,.14);
+  }
+  .brand { display: flex; justify-content: center; }
+  .brand span {
+    display: inline-flex; align-items: center; gap: 9px; height: 32px; padding: 0 14px;
+    border-radius: 999px; background: var(--soft); font-weight: 600; font-size: 14px;
+  }
+  .brand i { width: 11px; height: 11px; border-radius: 50%; background: var(--lime); }
+  h1 { margin: 20px 0 10px; text-align: center; font-size: 30px; line-height: 1.1; font-weight: 800; letter-spacing: -0.025em; }
+  .lede { margin: 0; text-align: center; font-size: 16px; font-weight: 500; }
+  .tags { margin: 8px 0 28px; text-align: center; font-size: 13px; color: var(--ink2); }
+
+  /* sport tiles */
+  .sports { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0 0 28px; padding: 0; border: 0; }
+  .sports legend { position: absolute; left: -9999px; }
+  .tile input { position: absolute; opacity: 0; pointer-events: none; }
+  .tile span {
+    display: grid; justify-items: center; gap: 10px; padding: 16px 6px 14px;
+    border: 1.5px solid var(--c); border-radius: 16px; cursor: pointer; user-select: none;
+    font-size: 13px; font-weight: 500; transition: background .15s, box-shadow .15s;
+  }
+  .tile input:checked + span { background: color-mix(in srgb, var(--c) 10%, white); box-shadow: inset 0 0 0 1.5px var(--c); font-weight: 700; }
+  .tile input:focus-visible + span { outline: 3px solid color-mix(in srgb, var(--c) 45%, transparent); outline-offset: 2px; }
+  .ico { width: 38px; height: 38px; border-radius: 10px; background: var(--c); display: grid; place-items: center; }
+  .ico svg { width: 26px; height: 26px; }
+
+  /* fields */
+  form { margin: 0; }
+  .f { margin-bottom: 16px; }
+  .f label { display: block; margin-bottom: 8px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+  .in {
+    width: 100%; height: 44px; padding: 0 15px; border: 1px solid var(--line); border-radius: 12px;
+    background: #fff; font: 400 15px Inter, system-ui, sans-serif; color: var(--ink); outline: none;
+  }
+  .in::placeholder { color: var(--ink3); }
+  .in:focus { border-color: var(--ink); }
+  select.in {
+    appearance: none; -webkit-appearance: none; cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M0 0h10L5 6z' fill='%230B0C0E'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 16px center; background-size: 10px;
+  }
+  .age { display: flex; align-items: center; gap: 9px; margin: 2px 0 20px; font-size: 13px; color: var(--ink2); cursor: pointer; }
+  .age input { width: 17px; height: 17px; margin: 0; accent-color: var(--ink); }
+  .btn {
+    width: 100%; height: 44px; border: 0; border-radius: 12px; cursor: pointer;
+    background: linear-gradient(90deg, var(--lime), var(--lime2)); color: var(--ink);
+    font: 700 15px Inter, system-ui, sans-serif;
+    box-shadow: 0 10px 24px -10px rgba(158,224,0,.8); transition: transform .1s, filter .15s;
+  }
+  .btn:hover { filter: brightness(1.04); }
+  .btn:active { transform: translateY(1px); }
+  .btn:disabled { opacity: .6; cursor: default; }
+  .err { margin: 12px 0 0; font-size: 13px; color: #C4321C; text-align: center; }
+  .err:empty { display: none; }
+  .hp { position: absolute; left: -9999px; }
+
+  /* referral */
+  .ref { margin-top: 32px; padding: 20px 16px 16px; border: 1px solid var(--line); border-radius: 16px; text-align: center; }
+  .ref h2 { margin: 0 0 12px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  .code {
+    display: inline-flex; align-items: center; gap: 10px; height: 44px; padding: 0 16px;
+    border: 1.5px solid var(--soccer); border-radius: 12px; background: #fff; cursor: pointer;
+    font: 500 17px "JetBrains Mono", ui-monospace, monospace; letter-spacing: .06em; color: var(--soccer);
+  }
+  .code svg { width: 16px; height: 16px; }
+  .ref p { margin: 10px 0 0; font-size: 12px; color: var(--ink2); }
+
+  .foot { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); text-align: center; font-size: 13px; color: var(--ink2); }
+  .foot b { color: var(--ink); }
+  .foot .dot { display: inline-block; width: 7px; height: 7px; margin-right: 7px; border-radius: 50%; background: var(--lime2); vertical-align: 1px; }
+
+  /* success */
+  .done { display: none; text-align: center; }
+  .card.joined form, .card.joined .sports-wrap { display: none; }
+  .card.joined .done { display: block; }
+  .check { width: 56px; height: 56px; margin: 4px auto 14px; border-radius: 50%; background: var(--lime); display: grid; place-items: center; }
+  .check svg { width: 26px; height: 26px; }
+  .done h2 { margin: 0 0 6px; font-size: 22px; font-weight: 800; letter-spacing: -0.02em; }
+  .done p { margin: 0; color: var(--ink2); }
+  .share { display: flex; gap: 8px; justify-content: center; margin-top: 14px; }
+  .share[hidden], .ghost[hidden] { display: none; }
+  .ghost { height: 38px; padding: 0 14px; border: 1px solid var(--line); border-radius: 10px; background: #fff; cursor: pointer; font: 600 13px Inter, system-ui, sans-serif; color: var(--ink); }
+
+  .toast {
+    position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 12px); opacity: 0;
+    padding: 10px 16px; border-radius: 999px; background: var(--ink); color: #fff; font-size: 13px; font-weight: 600;
+    transition: opacity .2s, transform .2s; pointer-events: none;
+  }
+  .toast.on { opacity: 1; transform: translate(-50%, 0); }
+
+  @media (max-width: 420px) {
+    body { padding: 16px 12px 40px; }
+    .card { padding: 32px 18px 26px; border-radius: 24px; }
+    h1 { font-size: 27px; }
+    .sports { gap: 8px; }
+    .tile span { font-size: 12px; padding: 14px 4px 12px; }
+  }
+</style>
 </head>
 <body>
 
-<!-- Header -->
-<header>
-  <div class="container">
-    <div class="header-content">
-      <div class="logo">
-        <span>Beacon</span>
-        <div class="logo-dot"></div>
-      </div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#features">Features</a></li>
-          <li><a href="#waitlist">Join Waitlist</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+<main class="card" id="card">
+  <div class="brand"><span><i aria-hidden="true"></i>Beacon</span></div>
+  <h1>Find your game</h1>
+  <p class="lede">See pickup games near you in real time</p>
+  <p class="tags">Join games &middot; Host games &middot; Find your regulars</p>
+
+  <form name="waitlist" id="form" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="company">
+    <input type="hidden" name="form-name" value="waitlist">
+    <input type="hidden" name="my_code" id="my_code">
+    <input type="hidden" name="referred_by" id="referred_by">
+    <p class="hp"><label>Leave empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
+
+    <fieldset class="sports">
+      <legend>Sports you play</legend>
+      <label class="tile" style="--c:var(--soccer)">
+        <input type="checkbox" name="sports[]" value="Soccer">
+        <span>
+          <i class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#fff"/><path d="M12 7.2l3.4 2.5-1.3 4H9.9l-1.3-4z" fill="#111"/><path d="M12 7.2V2.3M15.4 9.7l4.5-1.6M14.1 13.7l2.9 4M9.9 13.7l-2.9 4M8.6 9.7L4.1 8.1" stroke="#111" stroke-width="1.3"/><circle cx="12" cy="12" r="10" fill="none" stroke="#111" stroke-width="1.3"/></svg></i>
+          Soccer
+        </span>
+      </label>
+      <label class="tile" style="--c:var(--hoops)">
+        <input type="checkbox" name="sports[]" value="Basketball">
+        <span>
+          <i class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#5A2300" stroke-width="1.4"><circle cx="12" cy="12" r="10" fill="#FF9A4D"/><path d="M2 12h20M12 2v20M5 4.8c3 2.5 3 11.9 0 14.4M19 4.8c-3 2.5-3 11.9 0 14.4"/></svg></i>
+          Basketball
+        </span>
+      </label>
+      <label class="tile" style="--c:var(--pickle)">
+        <input type="checkbox" name="sports[]" value="Pickleball">
+        <span>
+          <i class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#D9F24A"/><g fill="#7C8F12"><circle cx="8" cy="8" r="1.3"/><circle cx="14" cy="7" r="1.3"/><circle cx="16.5" cy="12.5" r="1.3"/><circle cx="11" cy="12" r="1.3"/><circle cx="7" cy="14.5" r="1.3"/><circle cx="12.5" cy="17" r="1.3"/></g></svg></i>
+          Pickleball
+        </span>
+      </label>
+    </fieldset>
+
+    <div class="f">
+      <label for="first_name">First name</label>
+      <input class="in" id="first_name" name="first_name" autocomplete="given-name" placeholder="Alex" required>
     </div>
-  </div>
-</header>
-
-<!-- Hero Section -->
-<section class="hero">
-  <div class="container">
-    <h1>Find your <span class="hero-highlight">game</span> in <span class="hero-highlight">60 seconds</span></h1>
-    <p>See who's playing soccer, basketball, and pickleball near you. Join or start a game with real players in your area.</p>
-  </div>
-</section>
-
-<!-- Waitlist Form -->
-<section id="waitlist">
-  <div class="container">
-    <div class="form-section">
-      <form id="waitlistForm" name="waitlist" method="POST" netlify>
-        <div class="form-group">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" name="name" placeholder="John Doe" required>
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" placeholder="you@example.com" required>
-        </div>
-
-        <div class="form-group">
-          <label for="city">City</label>
-          <select id="city" name="city" required>
-            <option value="">Select your city</option>
-            <option value="Toronto">Toronto</option>
-            <option value="Mississauga">Mississauga</option>
-            <option value="Ottawa">Ottawa</option>
-            <option value="Montreal">Montreal</option>
-            <option value="Vancouver">Vancouver</option>
-            <option value="Calgary">Calgary</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label>Your Referral Code</label>
-          <div class="referral-code">
-            <div class="referral-code-value" id="referralCode">BEACON_0000</div>
-            <button type="button" class="copy-btn" onclick="copyCode()">Copy</button>
-          </div>
-        </div>
-
-        <input type="hidden" id="referralCodeInput" name="referral_code" value="BEACON_0000">
-
-        <button type="submit" class="submit-btn">Join the Waitlist</button>
-        <div id="statusMessage" class="status-message"></div>
-      </form>
+    <div class="f">
+      <label for="email">Email address</label>
+      <input class="in" id="email" type="email" name="email" autocomplete="email" placeholder="you@email.com" required>
     </div>
-  </div>
-</section>
-
-<!-- Sports Section -->
-<section class="sports-section">
-  <div class="container">
-    <h2>Available Sports</h2>
-    <div class="sports-badges">
-      <div class="sport-badge soccer">⚽ Soccer</div>
-      <div class="sport-badge basketball">🏀 Basketball</div>
-      <div class="sport-badge pickleball">🎾 Pickleball</div>
+    <div class="f">
+      <label for="city">City</label>
+      <select class="in" id="city" name="city" required>
+        <option value="" disabled selected>Select your city</option>
+        <option>Toronto</option>
+        <option>Mississauga</option>
+        <option>Ottawa</option>
+        <option>Montreal</option>
+        <option>Vancouver</option>
+        <option>Calgary</option>
+        <option>New York</option>
+        <option>Other</option>
+      </select>
     </div>
-  </div>
-</section>
+    <label class="age"><input type="checkbox" name="adult" value="yes" required> I'm 18 or older</label>
 
-<!-- Social Proof -->
-<section class="social-proof">
-  <div class="container">
-    <div class="proof-content">
-      <div class="proof-stat">
-        <h3>500+</h3>
-        <p>Players signed up</p>
-      </div>
-      <div class="proof-stat">
-        <h3>3</h3>
-        <p>Sports available</p>
-      </div>
-      <div class="proof-stat">
-        <h3>60 sec</h3>
-        <p>Time to join a game</p>
-      </div>
+    <button class="btn" id="submit" type="submit">Join Waitlist</button>
+    <p class="err" id="err" role="alert"></p>
+  </form>
+
+  <div class="done" aria-live="polite">
+    <div class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0B0C0E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+    <h2 id="doneTitle">You're in.</h2>
+    <p>We'll email you when Beacon opens in your city.</p>
+  </div>
+
+  <section class="ref" aria-labelledby="refTitle">
+    <h2 id="refTitle">Earn early access</h2>
+    <button class="code" id="code" type="button" aria-label="Copy your invite link">
+      <span id="codeText">BEACON_----</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>
+    </button>
+    <p id="refNote">Share your code &middot; Unlock priority access</p>
+    <div class="share" id="shareRow" hidden>
+      <button class="ghost" type="button" id="copyLink">Copy invite link</button>
+      <button class="ghost" type="button" id="shareBtn" hidden>Share</button>
     </div>
+  </section>
 
-    <h2 style="text-align: center; margin-top: 60px; margin-bottom: 40px; color: #000000;">What players are saying</h2>
-    <div class="testimonials">
-      <div class="testimonial">
-        <div class="testimonial-text">"Finally found people to play with on weekends. No more solo drills!"</div>
-        <div class="testimonial-author">— Alex, Toronto</div>
-      </div>
-      <div class="testimonial">
-        <div class="testimonial-text">"The app is so easy to use. Joined a game within an hour of signing up."</div>
-        <div class="testimonial-author">— Jordan, Toronto</div>
-      </div>
-      <div class="testimonial">
-        <div class="testimonial-text">"Best way to meet other athletes in the city. Highly recommend!"</div>
-        <div class="testimonial-author">— Casey, Toronto</div>
-      </div>
-    </div>
-  </div>
-</section>
+  <div class="foot"><span class="dot" aria-hidden="true"></span><b>Toronto</b> opens first &middot; Free &middot; 18+</div>
+</main>
 
-<!-- Features Section -->
-<section class="features" id="features">
-  <div class="container">
-    <h2>How It Works</h2>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <div class="feature-icon">📍</div>
-        <h3>See Games Near You</h3>
-        <p>Find pickup games happening in your area right now. Filter by sport, distance, and skill level.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">👥</div>
-        <h3>Connect With Players</h3>
-        <p>Message players directly, learn about them, and decide if it's the right fit for your skill level.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🎮</div>
-        <h3>Join or Host a Game</h3>
-        <p>One-tap join to existing games or start your own and invite friends to play together.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📊</div>
-        <h3>Build Your Reputation</h3>
-        <p>Show your reliability with a track record of games played. Earn trust from the community.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer>
-  <div class="container">
-    <p>&copy; 2026 Beacon. All rights reserved.</p>
-    <p><a href="#contact">Contact Us</a> · <a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></p>
-  </div>
-</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
-  // Generate unique referral code
-  function generateReferralCode() {
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    let code = 'BEACON_';
-    for (let i = 0; i < 4; i++) {
-      code += chars.charAt(Math.floor(Math.random() * chars.length));
-    }
-    return code;
+(() => {
+  const $ = id => document.getElementById(id);
+  const store = {
+    get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+    set(k, v) { try { localStorage.setItem(k, v); } catch {} },
+  };
+
+  // Each visitor gets one stable code. It is saved with their signup,
+  // and friends who join through their link are credited via referred_by.
+  function makeCode() {
+    const abc = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    const buf = new Uint32Array(4);
+    crypto.getRandomValues(buf);
+    return 'BEACON_' + Array.from(buf, n => abc[n % abc.length]).join('');
   }
-
-  // Initialize referral code
-  function initializeReferralCode() {
-    let referralCode = localStorage.getItem('beaconReferralCode');
-    if (!referralCode) {
-      referralCode = generateReferralCode();
-      localStorage.setItem('beaconReferralCode', referralCode);
-    }
-    document.getElementById('referralCode').textContent = referralCode;
-    document.getElementById('referralCodeInput').value = referralCode;
+  let code = store.get('beacon_code');
+  if (!/^BEACON_[A-Z0-9]{4}$/.test(code || '')) {
+    code = makeCode();
+    store.set('beacon_code', code);
   }
+  $('codeText').textContent = code;
+  $('my_code').value = code;
 
-  // Copy referral code to clipboard
-  function copyCode() {
-    const code = document.getElementById('referralCode').textContent;
-    navigator.clipboard.writeText(code);
-    const btn = event.target;
-    const originalText = btn.textContent;
-    btn.textContent = 'Copied!';
-    setTimeout(() => {
-      btn.textContent = originalText;
-    }, 2000);
+  const ref = new URLSearchParams(location.search).get('ref');
+  if (ref && /^BEACON_[A-Z0-9]{4}$/.test(ref) && ref !== code) $('referred_by').value = ref;
+
+  const link = () => `${location.origin}/?ref=${code}`;
+  let toastTimer;
+  function toast(msg) {
+    const t = $('toast');
+    t.textContent = msg;
+    t.classList.add('on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove('on'), 1800);
   }
-
-  // Form submission
-  document.getElementById('waitlistForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const form = this;
-    const statusMsg = document.getElementById('statusMessage');
-    const name = document.getElementById('name').value;
-
-    // Netlify form submission (auto-handled)
-    const formData = new FormData(form);
-
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData)
-    })
-    .then(() => {
-      statusMsg.className = 'status-message success';
-      statusMsg.textContent = `Welcome to Beacon, ${name}! Check your email to confirm.`;
-      form.reset();
-      initializeReferralCode();
-    })
-    .catch(() => {
-      statusMsg.className = 'status-message error';
-      statusMsg.textContent = 'Error submitting form. Please try again.';
+  async function copyLink() {
+    try { await navigator.clipboard.writeText(link()); toast('Invite link copied'); }
+    catch { toast(link()); }
+  }
+  $('code').addEventListener('click', copyLink);
+  $('copyLink').addEventListener('click', copyLink);
+  if (navigator.share) {
+    $('shareBtn').hidden = false;
+    $('shareBtn').addEventListener('click', () => {
+      navigator.share({ title: 'Beacon', text: 'Pickup games near you. Join the waitlist with my link:', url: link() }).catch(() => {});
     });
+  }
+
+  function showJoined(name) {
+    $('card').classList.add('joined');
+    $('doneTitle').textContent = name ? `You're in, ${name}.` : "You're in.";
+    $('refNote').textContent = 'Every friend who joins with your link moves you up the list.';
+    $('shareRow').hidden = false;
+  }
+  if (store.get('beacon_joined')) showJoined(store.get('beacon_name'));
+
+  // Submit in place so the referral code stays on screen. Without JS the form still posts to /thanks/.
+  $('form').addEventListener('submit', async e => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const btn = $('submit');
+    $('err').textContent = '';
+    btn.disabled = true;
+    btn.textContent = 'Joining...';
+    try {
+      const body = new URLSearchParams(new FormData(form)).toString();
+      const res = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body });
+      if (!res.ok) throw new Error(res.status);
+      const name = form.first_name.value.trim().slice(0, 40);
+      store.set('beacon_joined', '1');
+      store.set('beacon_name', name);
+      showJoined(name);
+    } catch {
+      $('err').textContent = "Couldn't join right now. Check your connection and try again.";
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Join Waitlist';
+    }
   });
-
-  // Initialize on page load
-  document.addEventListener('DOMContentLoaded', initializeReferralCode);
+})();
 </script>
-
 </body>
 </html>

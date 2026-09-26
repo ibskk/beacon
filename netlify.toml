@@ -1,11 +1,13 @@
 [build]
-  command = "echo 'Static site - no build needed'"
   publish = "."
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), camera=(), microphone=()"
 
 [dev]
   command = "python -m http.server 8000"
