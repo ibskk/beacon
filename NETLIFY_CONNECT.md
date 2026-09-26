@@ -131,3 +131,43 @@ git push origin main
 ---
 
 **Ready? Go to https://app.netlify.com and deploy!** 🎉
+
+## Waitlist to email tool bridge
+
+`netlify/functions/submission-created.mts` runs on every verified submission to the
+`waitlist` form and pushes the signup to the email tool. No export, no Zapier.
+
+It stays inert until credentials exist, so it is safe to deploy before the email
+account is set up: with no provider configured it logs the signup and returns 200.
+The Netlify submission record remains the source of truth either way.
+
+### Configure (pick one)
+
+Mailchimp:
+| Variable | Where to find it |
+|---|---|
+| `MAILCHIMP_API_KEY` | Account > Extras > API keys. Must keep its `-usX` suffix. |
+| `MAILCHIMP_LIST_ID` | Audience > Settings > Audience name and defaults > Audience ID |
+
+Create these audience merge fields first, or the values arrive empty:
+`FNAME`, `CITY`, `SPORTS`, `MYCODE`, `REFBY`.
+
+ConvertKit:
+| Variable | Where to find it |
+|---|---|
+| `CONVERTKIT_API_KEY` | Settings > Advanced > API key |
+| `CONVERTKIT_FORM_ID` | The numeric id in the form's editor URL |
+
+Set them in Netlify under Project configuration > Environment variables, scoped to
+Functions, then redeploy. Mailchimp wins if both are set.
+
+### Behaviour
+- Upserts on Mailchimp via the subscriber hash, so a repeat signup updates rather than errors.
+- Skips anyone who did not tick 18+. Required by the brief and by CASL.
+- Normalizes `sports[]` to a comma-separated string and lowercases the email.
+- Returns 502 on a provider error so the failure is visible in the function log;
+  the submission is already stored by Netlify and can be replayed.
+
+### Verify
+Submit a real signup, then check Project > Logs > Functions for
+`mailchimp: subscribed ...` or `convertkit: subscribed ...`.

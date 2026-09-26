@@ -7,11 +7,20 @@
     "start": "python -m http.server 8000",
     "dev": "python -m http.server 8000 --directory ."
   },
-  "keywords": ["sports", "pickup", "waitlist", "beacon"],
+  "keywords": [
+    "sports",
+    "pickup",
+    "waitlist",
+    "beacon"
+  ],
   "author": "Beacon Team",
   "license": "PRIVATE",
   "repository": {
     "type": "git",
     "url": "https://github.com/your-username/beacon-waitlist"
+  },
+  "devDependencies": {
+    "@netlify/functions": "^2.8.1",
+    "@types/node": "^26.6.3"
   }
 }
