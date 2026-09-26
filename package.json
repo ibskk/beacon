@@ -1,0 +1,17 @@
+{
+  "name": "beacon-waitlist",
+  "version": "1.0.0",
+  "description": "Beacon pickup sports waitlist landing page",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000 --directory ."
+  },
+  "keywords": ["sports", "pickup", "waitlist", "beacon"],
+  "author": "Beacon Team",
+  "license": "PRIVATE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/beacon-waitlist"
+  }
+}
