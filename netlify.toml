@@ -1,5 +1,5 @@
 [build]
-  publish = "."
+  publish = "web"
 
 [[headers]]
   for = "/*"
@@ -10,5 +10,12 @@
     Permissions-Policy = "geolocation=(), camera=(), microphone=()"
 
 [dev]
-  command = "python -m http.server 8000"
+  command = "python -m http.server 8000 --directory web"
   port = 8000
+
+# Repo notes in web/ are not public pages.
+[[redirects]]
+  from = "/README.md"
+  to = "/404.html"
+  status = 404
+  force = true

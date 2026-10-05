@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Message sent | Beacon</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F2F4F6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23B5F000'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --page: #F2F4F6; --card: #FFFFFF; --ink: #0B0C0E; --ink2: #3F444B; --ink3: #6E747D;
+    --line: #DDE1E6; --soft: #F1F2F4; --lime: #B5F000; --lime2: #9EE000; --warn: #C4321C;
+    color-scheme: light;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--page); }
+  body {
+    min-height: 100vh; padding: 40px 16px 56px; color: var(--ink);
+    font: 16px/1.65 Inter, -apple-system, system-ui, sans-serif; -webkit-font-smoothing: antialiased;
+    overflow-wrap: break-word;
+  }
+  :focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .skip { position: absolute; left: 16px; top: -60px; padding: 8px 14px; border-radius: 10px; background: var(--ink); color: #fff; font-weight: 600; text-decoration: none; z-index: 10; }
+  .skip:focus { top: 12px; }
+  .wrap { width: 100%; max-width: 520px; margin: 0 auto; }
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 0 16px; }
+  .brand {
+    display: inline-flex; align-items: center; gap: 9px; height: 32px; padding: 0 14px;
+    border-radius: 999px; background: var(--card); color: var(--ink); font-weight: 600; font-size: 14px; text-decoration: none;
+  }
+  .brand i { width: 11px; height: 11px; border-radius: 50%; background: var(--lime); }
+  .back { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--ink2); text-decoration: none; }
+  .back:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+  .back svg { width: 16px; height: 16px; }
+  .card {
+    background: var(--card); border-radius: 28px; padding: 44px 44px 40px;
+    box-shadow: 0 1px 2px rgba(10,20,30,.04), 0 24px 60px -20px rgba(10,20,30,.14);
+  }
+  .eyebrow { margin: 0 0 8px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink2); }
+  h1 { margin: 0 0 10px; font-size: 34px; line-height: 1.12; font-weight: 800; letter-spacing: -0.025em; }
+  .meta { margin: 0 0 28px; font-size: 14px; color: var(--ink2); }
+  .lead { font-size: 17px; color: var(--ink); }
+  h2 { margin: 40px 0 10px; font-size: 21px; line-height: 1.3; font-weight: 800; letter-spacing: -0.015em; scroll-margin-top: 16px; }
+  h3 { margin: 26px 0 6px; font-size: 16px; line-height: 1.4; font-weight: 700; }
+  p, ul, ol, dl { margin: 0 0 14px; }
+  ul, ol { padding-left: 22px; }
+  li { margin: 0 0 6px; }
+  li::marker { color: var(--ink3); }
+  strong { font-weight: 700; }
+  a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+  .prose { color: var(--ink2); }
+  .prose strong, .prose h2, .prose h3 { color: var(--ink); }
+  .note { margin: 0 0 18px; padding: 16px 18px; border-radius: 16px; background: var(--soft); color: var(--ink); }
+  .note p:last-child, .note ul:last-child { margin-bottom: 0; }
+  .note.alert { background: #FFF4EF; border: 1px solid #F3C7B6; }
+  .caps { text-transform: uppercase; font-size: 14px; letter-spacing: .01em; }
+  .toc { margin: 0 0 8px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 16px; }
+  .toc h2 { margin: 0 0 8px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink2); }
+  .toc ol { margin: 0; padding-left: 20px; columns: 2; column-gap: 28px; font-size: 14px; }
+  .toc li { margin: 0 0 4px; break-inside: avoid; }
+  .tbl { width: 100%; border-collapse: collapse; margin: 0 0 18px; font-size: 14px; }
+  .tbl th, .tbl td { text-align: left; vertical-align: top; padding: 10px 10px 10px 0; border-bottom: 1px solid var(--line); }
+  .tbl th { font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); }
+  .tbl td:first-child { font-weight: 600; color: var(--ink); width: 34%; }
+  details { border-bottom: 1px solid var(--line); }
+  details:first-of-type { border-top: 1px solid var(--line); }
+  summary { cursor: pointer; padding: 14px 0; font-weight: 600; color: var(--ink); list-style-position: outside; }
+  details > div { padding: 0 0 14px; }
+  .steps { counter-reset: s; list-style: none; padding: 0; }
+  .steps li { counter-increment: s; position: relative; padding-left: 40px; margin-bottom: 12px; min-height: 28px; }
+  .steps li::before {
+    content: counter(s); position: absolute; left: 0; top: 0; width: 28px; height: 28px; border-radius: 50%;
+    background: var(--lime); color: var(--ink); font-weight: 800; font-size: 14px; display: grid; place-items: center;
+  }
+
+  /* forms */
+  form { margin: 8px 0 0; }
+  .f { margin-bottom: 16px; }
+  .f label, .lbl { display: block; margin-bottom: 8px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); }
+  .in {
+    width: 100%; height: 44px; padding: 0 15px; border: 1px solid var(--line); border-radius: 12px;
+    background: #fff; font: 400 15px Inter, system-ui, sans-serif; color: var(--ink); outline: none;
+  }
+  textarea.in { height: auto; min-height: 140px; padding: 12px 15px; line-height: 1.5; resize: vertical; }
+  .in::placeholder { color: var(--ink3); }
+  .in:focus { border-color: var(--ink); box-shadow: 0 0 0 1px var(--ink), 0 0 0 4px color-mix(in srgb, var(--lime) 55%, transparent); }
+  select.in {
+    appearance: none; -webkit-appearance: none; cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M0 0h10L5 6z' fill='%230B0C0E'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 16px center; background-size: 10px;
+  }
+  .chk { display: flex; align-items: flex-start; gap: 10px; margin: 4px 0 20px; font-size: 14px; color: var(--ink2); cursor: pointer; }
+  .chk input { flex: none; width: 17px; height: 17px; margin: 3px 0 0; accent-color: var(--ink); }
+  .hint { margin: 6px 0 0; font-size: 13px; color: var(--ink2); }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; width: 100%; height: 44px; border: 0; border-radius: 12px; cursor: pointer;
+    background: linear-gradient(90deg, var(--lime), var(--lime2)); color: var(--ink); text-decoration: none;
+    font: 700 15px Inter, system-ui, sans-serif;
+    box-shadow: 0 10px 24px -10px rgba(158,224,0,.8); transition: transform .1s, filter .15s;
+  }
+  .btn:hover { filter: brightness(1.04); }
+  .btn:active { transform: translateY(1px); }
+  .hp { position: absolute; left: -9999px; }
+
+  /* small centered status pages */
+  .status { text-align: center; }
+  .status h1 { font-size: 28px; }
+  .status p { color: var(--ink2); }
+  .status .btn { margin-top: 10px; }
+  .check { width: 56px; height: 56px; margin: 0 auto 16px; border-radius: 50%; background: var(--lime); display: grid; place-items: center; }
+  .check svg { width: 26px; height: 26px; }
+
+  /* footer */
+  .site-foot { margin-top: 24px; text-align: center; font-size: 13px; color: var(--ink2); }
+  .site-foot nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 18px; margin-bottom: 8px; }
+  .site-foot a { color: var(--ink2); }
+  .site-foot a:hover { color: var(--ink); }
+  .site-foot p { margin: 0; }
+
+  @media (max-width: 600px) {
+    body { padding: 16px 12px 40px; font-size: 15.5px; }
+    .card { padding: 30px 20px 28px; border-radius: 24px; }
+    h1 { font-size: 28px; }
+    h2 { font-size: 19px; margin-top: 34px; }
+    .toc ol { columns: 1; }
+    .tbl, .tbl tbody, .tbl tr, .tbl td { display: block; width: 100%; }
+    .tbl thead { position: absolute; left: -9999px; }
+    .tbl tr { padding: 10px 0; border-bottom: 1px solid var(--line); }
+    .tbl td { padding: 2px 0; border: 0; }
+    .tbl td:first-child { width: 100%; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="top">
+      <a class="brand" href="/"><i aria-hidden="true"></i>Beacon</a>
+  </header>
+  <main class="card" id="main">
+    <div class="status">
+    <div class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0B0C0E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+    <h1>Message sent</h1>
+    <p>Thanks for contacting Beacon. We respond to safety reports within 24 hours and to everything else within 2 business days.</p>
+    <p>If anyone is in immediate danger, call 911 or your local emergency number.</p>
+    <a class="btn" href="/">Back to home</a>
+    </div>
+  </main>
+  <footer class="site-foot">
+    <nav aria-label="Site">
+      <a href="/">Home</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/guidelines/">Community Guidelines</a>
+      <a href="/support/">Support</a>
+      <a href="/delete-account/">Delete account</a>
+    </nav>
+    <p>Beacon is operated from Toronto, Ontario, Canada.</p>
+  </footer>
+</div>
+</body>
+</html>

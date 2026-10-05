@@ -1,0 +1,348 @@
+<!doctype html>
+<!-- Owner: add legal business name and mailing address here before app submission (CASL/Apple) -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy Policy | Beacon</title>
+<meta name="description" content="How Beacon collects, uses, stores and protects personal information on the waitlist and in the app.">
+<meta name="theme-color" content="#F2F4F6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23B5F000'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --page: #F2F4F6; --card: #FFFFFF; --ink: #0B0C0E; --ink2: #3F444B; --ink3: #6E747D;
+    --line: #DDE1E6; --soft: #F1F2F4; --lime: #B5F000; --lime2: #9EE000; --warn: #C4321C;
+    color-scheme: light;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--page); }
+  body {
+    min-height: 100vh; padding: 40px 16px 56px; color: var(--ink);
+    font: 16px/1.65 Inter, -apple-system, system-ui, sans-serif; -webkit-font-smoothing: antialiased;
+    overflow-wrap: break-word;
+  }
+  :focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .skip { position: absolute; left: 16px; top: -60px; padding: 8px 14px; border-radius: 10px; background: var(--ink); color: #fff; font-weight: 600; text-decoration: none; z-index: 10; }
+  .skip:focus { top: 12px; }
+  .wrap { width: 100%; max-width: 760px; margin: 0 auto; }
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 0 16px; }
+  .brand {
+    display: inline-flex; align-items: center; gap: 9px; height: 32px; padding: 0 14px;
+    border-radius: 999px; background: var(--card); color: var(--ink); font-weight: 600; font-size: 14px; text-decoration: none;
+  }
+  .brand i { width: 11px; height: 11px; border-radius: 50%; background: var(--lime); }
+  .back { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--ink2); text-decoration: none; }
+  .back:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+  .back svg { width: 16px; height: 16px; }
+  .card {
+    background: var(--card); border-radius: 28px; padding: 44px 44px 40px;
+    box-shadow: 0 1px 2px rgba(10,20,30,.04), 0 24px 60px -20px rgba(10,20,30,.14);
+  }
+  .eyebrow { margin: 0 0 8px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink2); }
+  h1 { margin: 0 0 10px; font-size: 34px; line-height: 1.12; font-weight: 800; letter-spacing: -0.025em; }
+  .meta { margin: 0 0 28px; font-size: 14px; color: var(--ink2); }
+  .lead { font-size: 17px; color: var(--ink); }
+  h2 { margin: 40px 0 10px; font-size: 21px; line-height: 1.3; font-weight: 800; letter-spacing: -0.015em; scroll-margin-top: 16px; }
+  h3 { margin: 26px 0 6px; font-size: 16px; line-height: 1.4; font-weight: 700; }
+  p, ul, ol, dl { margin: 0 0 14px; }
+  ul, ol { padding-left: 22px; }
+  li { margin: 0 0 6px; }
+  li::marker { color: var(--ink3); }
+  strong { font-weight: 700; }
+  a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+  .prose { color: var(--ink2); }
+  .prose strong, .prose h2, .prose h3 { color: var(--ink); }
+  .note { margin: 0 0 18px; padding: 16px 18px; border-radius: 16px; background: var(--soft); color: var(--ink); }
+  .note p:last-child, .note ul:last-child { margin-bottom: 0; }
+  .note.alert { background: #FFF4EF; border: 1px solid #F3C7B6; }
+  .caps { text-transform: uppercase; font-size: 14px; letter-spacing: .01em; }
+  .toc { margin: 0 0 8px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 16px; }
+  .toc h2 { margin: 0 0 8px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink2); }
+  .toc ol { margin: 0; padding-left: 20px; columns: 2; column-gap: 28px; font-size: 14px; }
+  .toc li { margin: 0 0 4px; break-inside: avoid; }
+  .tbl { width: 100%; border-collapse: collapse; margin: 0 0 18px; font-size: 14px; }
+  .tbl th, .tbl td { text-align: left; vertical-align: top; padding: 10px 10px 10px 0; border-bottom: 1px solid var(--line); }
+  .tbl th { font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); }
+  .tbl td:first-child { font-weight: 600; color: var(--ink); width: 34%; }
+  details { border-bottom: 1px solid var(--line); }
+  details:first-of-type { border-top: 1px solid var(--line); }
+  summary { cursor: pointer; padding: 14px 0; font-weight: 600; color: var(--ink); list-style-position: outside; }
+  details > div { padding: 0 0 14px; }
+  .steps { counter-reset: s; list-style: none; padding: 0; }
+  .steps li { counter-increment: s; position: relative; padding-left: 40px; margin-bottom: 12px; min-height: 28px; }
+  .steps li::before {
+    content: counter(s); position: absolute; left: 0; top: 0; width: 28px; height: 28px; border-radius: 50%;
+    background: var(--lime); color: var(--ink); font-weight: 800; font-size: 14px; display: grid; place-items: center;
+  }
+
+  /* forms */
+  form { margin: 8px 0 0; }
+  .f { margin-bottom: 16px; }
+  .f label, .lbl { display: block; margin-bottom: 8px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); }
+  .in {
+    width: 100%; height: 44px; padding: 0 15px; border: 1px solid var(--line); border-radius: 12px;
+    background: #fff; font: 400 15px Inter, system-ui, sans-serif; color: var(--ink); outline: none;
+  }
+  textarea.in { height: auto; min-height: 140px; padding: 12px 15px; line-height: 1.5; resize: vertical; }
+  .in::placeholder { color: var(--ink3); }
+  .in:focus { border-color: var(--ink); box-shadow: 0 0 0 1px var(--ink), 0 0 0 4px color-mix(in srgb, var(--lime) 55%, transparent); }
+  select.in {
+    appearance: none; -webkit-appearance: none; cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M0 0h10L5 6z' fill='%230B0C0E'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 16px center; background-size: 10px;
+  }
+  .chk { display: flex; align-items: flex-start; gap: 10px; margin: 4px 0 20px; font-size: 14px; color: var(--ink2); cursor: pointer; }
+  .chk input { flex: none; width: 17px; height: 17px; margin: 3px 0 0; accent-color: var(--ink); }
+  .hint { margin: 6px 0 0; font-size: 13px; color: var(--ink2); }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; width: 100%; height: 44px; border: 0; border-radius: 12px; cursor: pointer;
+    background: linear-gradient(90deg, var(--lime), var(--lime2)); color: var(--ink); text-decoration: none;
+    font: 700 15px Inter, system-ui, sans-serif;
+    box-shadow: 0 10px 24px -10px rgba(158,224,0,.8); transition: transform .1s, filter .15s;
+  }
+  .btn:hover { filter: brightness(1.04); }
+  .btn:active { transform: translateY(1px); }
+  .hp { position: absolute; left: -9999px; }
+
+  /* small centered status pages */
+  .status { text-align: center; }
+  .status h1 { font-size: 28px; }
+  .status p { color: var(--ink2); }
+  .status .btn { margin-top: 10px; }
+  .check { width: 56px; height: 56px; margin: 0 auto 16px; border-radius: 50%; background: var(--lime); display: grid; place-items: center; }
+  .check svg { width: 26px; height: 26px; }
+
+  /* footer */
+  .site-foot { margin-top: 24px; text-align: center; font-size: 13px; color: var(--ink2); }
+  .site-foot nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 18px; margin-bottom: 8px; }
+  .site-foot a { color: var(--ink2); }
+  .site-foot a:hover { color: var(--ink); }
+  .site-foot p { margin: 0; }
+
+  @media (max-width: 600px) {
+    body { padding: 16px 12px 40px; font-size: 15.5px; }
+    .card { padding: 30px 20px 28px; border-radius: 24px; }
+    h1 { font-size: 28px; }
+    h2 { font-size: 19px; margin-top: 34px; }
+    .toc ol { columns: 1; }
+    .tbl, .tbl tbody, .tbl tr, .tbl td { display: block; width: 100%; }
+    .tbl thead { position: absolute; left: -9999px; }
+    .tbl tr { padding: 10px 0; border-bottom: 1px solid var(--line); }
+    .tbl td { padding: 2px 0; border: 0; }
+    .tbl td:first-child { width: 100%; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="top">
+      <a class="brand" href="/"><i aria-hidden="true"></i>Beacon</a>
+      <a class="back" href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>Back to home</a>
+  </header>
+  <main class="card" id="main">
+    <p class="eyebrow">Legal</p>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Last updated October 5, 2026</p>
+
+    <div class="prose">
+    <p class="lead">This policy explains what personal information Beacon collects, why, where it is stored, who can see it, and the choices you have. It covers both the Beacon waitlist website and the Beacon mobile app for iOS and Android.</p>
+
+    <div class="note">
+      <p><strong>The short version</strong></p>
+      <ul>
+        <li>We collect only what we need to run the waitlist and the app.</li>
+        <li>No advertising, no tracking across apps or websites, no third-party analytics, and we never sell or rent your data.</li>
+        <li>Your date of birth, gender, email address and location are never shown to other users.</li>
+        <li>Your device location is used in the app only to find games near you and to verify check-in. It is not stored.</li>
+        <li>You can delete your account in the app at any time, and deletion is immediate. If you no longer have the app, you can request deletion on our website and we complete it within 30 days.</li>
+      </ul>
+    </div>
+
+    <nav class="toc" aria-labelledby="toc-title">
+      <h2 id="toc-title">On this page</h2>
+      <ol>
+        <li><a href="#who-we-are">Who we are</a></li>
+        <li><a href="#waitlist">Waitlist information</a></li>
+        <li><a href="#app">App information</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#support-forms">Support and deletion forms</a></li>
+        <li><a href="#use">How we use information</a></li>
+        <li><a href="#visible">What other users can see</a></li>
+        <li><a href="#do-not">What we do not do</a></li>
+        <li><a href="#providers">Service providers and storage</a></li>
+        <li><a href="#cross-border">Storage outside Canada</a></li>
+        <li><a href="#sharing">When we may disclose information</a></li>
+        <li><a href="#retention">How long we keep it</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#rights">Your rights and choices</a></li>
+        <li><a href="#legal-bases">Consent and legal bases</a></li>
+        <li><a href="#age">Age requirement</a></li>
+        <li><a href="#changes">Changes to this policy</a></li>
+        <li><a href="#contact">Contact and privacy officer</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="who-we-are">1. Who we are</h2>
+    <!-- Owner: replace "operated by its founder" with the legal business name (or your legal name as a sole proprietor) and add a mailing address before app submission. -->
+    <p>Beacon is a pickup sports app that helps adults find, join and host casual games and groups for sports such as soccer, basketball and pickleball. Beacon is operated by its founder from Toronto, Ontario, Canada. In this policy, "Beacon", "we", "us" and "our" mean the operator of the Beacon website and app. "You" means anyone who joins the waitlist, uses the app, or contacts us.</p>
+    <p>We are responsible for the personal information described here under Canada's <em>Personal Information Protection and Electronic Documents Act</em> (PIPEDA) and, for residents of Quebec, the <em>Act respecting the protection of personal information in the private sector</em> as amended by Law 25.</p>
+
+    <h2 id="waitlist">2. Information we collect on the waitlist</h2>
+    <p>When you join the waitlist at this website, we collect:</p>
+    <ul>
+      <li><strong>First name</strong>, to personalise our emails.</li>
+      <li><strong>Email address</strong>, to send you Beacon updates, launch news and invites, which you agree to receive when you join.</li>
+      <li><strong>City</strong>, so we can tell you when Beacon opens near you and decide where to launch next.</li>
+      <li><strong>Sports you play</strong> (optional), to plan which games to support first.</li>
+      <li><strong>Confirmation that you are 18 or older.</strong></li>
+      <li><strong>Referral codes</strong>: the code generated for you (for example BEACON_7KQ2) and, if you arrived through a friend's invite link, that friend's code, so we can credit valid referrals.</li>
+      <li><strong>Campaign source</strong>: if you reached the site through a link with campaign tags (utm_source, utm_medium, utm_campaign), those tags are saved with your signup so we know which posts or ads bring people to Beacon. They describe the link, not you, and are not combined with information from other websites.</li>
+    </ul>
+    <p>Your referral code is also saved in your browser's local storage so the page can show you the same code on return visits. It is not used for tracking and you can clear it by clearing your browser's site data. The website does not use cookies for advertising or analytics.</p>
+    <p>Waitlist submissions are stored with our website host, Netlify, Inc., in the United States.</p>
+
+    <h2 id="app">3. Information we collect in the app</h2>
+    <table class="tbl">
+      <thead><tr><th scope="col">Information</th><th scope="col">Why we collect it</th></tr></thead>
+      <tbody>
+        <tr><td>Email address</td><td>To create and secure your account, let you sign in, and send account messages such as email confirmation and password reset.</td></tr>
+        <tr><td>Password</td><td>To sign you in. Your password is hashed by our authentication provider. We never see or store it in readable form.</td></tr>
+        <tr><td>Display name</td><td>Shown to other users on games, groups and chat so people know who they are playing with.</td></tr>
+        <tr><td>Date of birth</td><td>Used only to confirm you are 18 or older and to apply group age rules (for example, a group set to 25+). Never shown to anyone.</td></tr>
+        <tr><td>Gender (optional)</td><td>Used only to apply games and groups that are set for women and non-binary players. Never shown to anyone. You can choose "prefer not to say", and you can ask us to change or remove it at any time.</td></tr>
+        <tr><td>City</td><td>To show games and groups in your city when location is off.</td></tr>
+        <tr><td>Terms acceptance</td><td>The version of the Terms you accepted and when, so we can show you agreed to them.</td></tr>
+        <tr><td>Games and groups</td><td>Games you host, join, leave or check in to, and groups you create, join, request to join or leave, along with your role (host, co-host or member).</td></tr>
+        <tr><td>Group chat messages</td><td>Text messages you post in group chats, so other members can read them.</td></tr>
+        <tr><td>Reports and blocks</td><td>Reports you file about messages, users, games or groups (the reason and any details you add), and users you block, so we can keep the community safe and hide blocked users from you.</td></tr>
+        <tr><td>Sign-in session</td><td>The app keeps a sign-in token on your device so you stay signed in. It is removed when you sign out or delete the app.</td></tr>
+      </tbody>
+    </table>
+    <p>When you host a game or create an in-person group, the venue name and venue location you enter are shown to other users so they can find the game. Group areas are rounded to roughly one kilometre. Do not enter your home address as a venue.</p>
+    <p>Like any online service, our providers automatically process limited technical information, such as IP address, device and app version, and timestamps, to deliver the service, prevent abuse and keep it secure. We do not use this information to build profiles of you or to track you.</p>
+
+    <h2 id="location">4. Location</h2>
+    <p>If you allow it, the app uses your device's location <strong>while you are using the app</strong> for two purposes only:</p>
+    <ul>
+      <li>to find games and groups near you; and</li>
+      <li>to verify that you are at the venue when you check in to a game (within 500 metres).</li>
+    </ul>
+    <p>Your location is sent to our servers only to answer that request. It is <strong>not stored</strong> in your profile or any history, and it is <strong>never shown to other users</strong>. Other users do not see you on the map. The app does not use location in the background. If you tap <em>Use current location</em> while placing a game's meeting point, that point becomes the venue location and is shown to other users like any venue you place by hand; in-person groups are placed in your area, rounded to roughly one kilometre. If you decline location access, you can still browse games by city. You can change this permission at any time in your device settings.</p>
+
+    <h2 id="support-forms">5. Support and deletion forms</h2>
+    <p>If you use the support form or the account deletion form on this website, we collect the details you submit (such as your name, email address, topic and message) and use them only to respond to you and handle your request. These submissions are stored with Netlify in the United States.</p>
+
+    <h2 id="use">6. How we use information</h2>
+    <ul>
+      <li>To run the waitlist, send updates you have agreed to receive, and invite people when Beacon opens in their city.</li>
+      <li>To create and maintain your account and provide the app's features.</li>
+      <li>To enforce the 18+ requirement and the age and gender rules hosts set for games and groups.</li>
+      <li>To keep the community safe: filtering messages, reviewing reports, enforcing our <a href="/terms/">Terms</a> and <a href="/guidelines/">Community Guidelines</a>, and preventing fraud and abuse, including fake referrals.</li>
+      <li>To respond to support, privacy and deletion requests.</li>
+      <li>To comply with the law.</li>
+    </ul>
+    <p>We do not use your information for any other purpose without telling you and, where required, asking for your consent.</p>
+
+    <h2 id="visible">7. What other users can see</h2>
+    <ul>
+      <li><strong>Your display name</strong>, on games you host, group member lists, game rosters (visible to the host and joined players) and next to your chat messages.</li>
+      <li><strong>Your chat messages</strong>, to members of the group where you post them.</li>
+      <li><strong>Games and groups you host</strong>, including venue, time and settings, to users who can see them under the visibility rules you choose.</li>
+    </ul>
+    <p>Other users <strong>never</strong> see your email address, date of birth, age, gender or location.</p>
+
+    <h2 id="do-not">8. What we do not do</h2>
+    <ul>
+      <li>We do not show advertising.</li>
+      <li>We do not track you across other companies' apps or websites, and we do not use advertising identifiers.</li>
+      <li>We do not use third-party analytics or tracking tools.</li>
+      <li>We do not sell, rent or trade your personal information, and we do not share it for cross-context behavioural advertising.</li>
+    </ul>
+
+    <h2 id="providers">9. Service providers and where data is stored</h2>
+    <p>We use a small number of service providers who process information on our behalf, under contracts that limit their use of it to providing their service to us:</p>
+    <ul>
+      <li><strong>Netlify, Inc.</strong> (United States) hosts this website and stores waitlist, support and deletion form submissions.</li>
+      <li><strong>Supabase, Inc.</strong> provides our cloud database, authentication and realtime chat. App data is stored in the Supabase region selected when the service was set up, which is in Canada or the United States.</li>
+      <li><strong>Apple Maps</strong> (on iOS) and <strong>Google Maps</strong> (on Android) display maps in the app. To draw the map, your device requests map images for the area on screen directly from Apple or Google, under their own privacy policies.</li>
+      <li>If we use an email delivery service to send waitlist updates, it will receive only your first name and email address for that purpose.</li>
+    </ul>
+    <p>When you download the app, Apple's App Store or Google Play processes that transaction under their own privacy policies.</p>
+
+    <h2 id="cross-border">10. Storage and processing outside Canada</h2>
+    <p>Some of our service providers store or process information outside Canada, including in the United States. Information held outside Canada is subject to the laws of that country and may be accessible to its courts, law enforcement and national security authorities. Before transferring information outside Quebec, we assess whether it will receive adequate protection, as required by Quebec law. By joining the waitlist or using the app, you acknowledge this storage and processing outside Canada.</p>
+
+    <h2 id="sharing">11. When we may disclose information</h2>
+    <p>Apart from the service providers above and what other users can see, we disclose personal information only:</p>
+    <ul>
+      <li>when required by law, such as a valid court order or legal process;</li>
+      <li>when we believe in good faith it is necessary to protect someone's life, health or safety, or to investigate fraud or a serious breach of our Terms;</li>
+      <li>as part of a merger, acquisition or sale of all or part of Beacon, in which case the receiving party must keep protecting it as described in this policy, and we will notify you; or</li>
+      <li>with your consent.</li>
+    </ul>
+
+    <h2 id="retention">12. How long we keep information</h2>
+    <ul>
+      <li><strong>Waitlist data</strong> is kept until 12 months after Beacon launches in your city, or until you unsubscribe or ask us to delete it, whichever comes first.</li>
+      <li><strong>Account data</strong> is kept until you delete your account. When you delete your account in the app, it is deleted immediately from our live database, including your profile, memberships, messages, games and groups you host, and blocks. Copies in backups are purged within 30 days.</li>
+      <li><strong>Safety reports</strong> you filed are not deleted with your account. They are kept in anonymised form (no longer linked to you) for up to 12 months so we can identify repeat abuse and keep the community safe.</li>
+      <li><strong>Deletion requests made on our website</strong> (for people without the app) are verified with the email address on the account and completed within 30 days.</li>
+      <li><strong>Support and deletion requests</strong> are kept for as long as needed to resolve them and to show we did, and no longer than 12 months.</li>
+    </ul>
+
+    <h2 id="security">13. Security</h2>
+    <p>We use reasonable administrative, technical and physical safeguards appropriate to the sensitivity of the information, including encryption in transit (HTTPS), hashed passwords, row-level access rules in our database so users can read only what they are allowed to see, and limited internal access. No system is perfectly secure. If a privacy breach creates a real risk of significant harm to you, we will notify you and the relevant privacy regulator as required by law.</p>
+
+    <h2 id="rights">14. Your rights and choices</h2>
+    <p>Depending on where you live, including under PIPEDA, Quebec law, the EU and UK General Data Protection Regulation, and US state laws such as the California Consumer Privacy Act, you may have the right to:</p>
+    <ul>
+      <li><strong>access</strong> the personal information we hold about you and learn how it has been used and disclosed;</li>
+      <li><strong>correct</strong> information that is inaccurate or incomplete;</li>
+      <li><strong>delete</strong> your information;</li>
+      <li><strong>receive a copy</strong> of information you provided in a structured, commonly used format;</li>
+      <li><strong>withdraw consent</strong>, for example by unsubscribing from emails, subject to legal or contractual limits; and</li>
+      <li><strong>complain</strong> to a privacy regulator.</li>
+    </ul>
+    <p>We will not treat you differently for exercising these rights.</p>
+    <h3>How to exercise them</h3>
+    <ul>
+      <li><strong>Unsubscribe</strong> from waitlist emails using the link in any email, or through the <a href="/support/">support form</a>.</li>
+      <li><strong>Edit</strong> your display name in the app's Profile screen. To correct other details, use the <a href="/support/">support form</a>.</li>
+      <li><strong>Delete your account</strong> in the app under Profile, then Delete account. If you no longer have the app, use the <a href="/delete-account/">account deletion page</a>.</li>
+      <li>For <strong>any other request</strong>, use the <a href="/support/">support form</a> and choose "Privacy request".</li>
+    </ul>
+    <p>We may need to confirm your identity before acting on a request, usually by asking you to reply from the email address on your account. We respond within 30 days. If you are not satisfied with our response, you can contact the Office of the Privacy Commissioner of Canada, the Commission d'acc&egrave;s &agrave; l'information du Qu&eacute;bec if you live in Quebec, or the data protection authority where you live.</p>
+
+    <h2 id="legal-bases">15. Consent and legal bases</h2>
+    <p>We rely on your consent to send waitlist emails, which you give by joining the waitlist and can withdraw at any time. We process app data because it is necessary to provide the service you sign up for, and for our legitimate interest in keeping users safe and preventing abuse. We rely on your consent for location access, which you control in your device settings. Where we must keep information to comply with the law, we rely on that legal obligation.</p>
+
+    <h2 id="age">16. Age requirement</h2>
+    <p>Beacon is only for people 18 and older. We do not knowingly collect personal information from anyone under 18. The app checks date of birth at sign-up and refuses accounts for people under 18. If you believe someone under 18 has joined the waitlist or created an account, please tell us through the <a href="/support/">support form</a> and we will delete their information.</p>
+
+    <h2 id="changes">17. Changes to this policy</h2>
+    <p>We may update this policy as Beacon changes or the law requires. We will change the "Last updated" date at the top, and if a change is significant, we will tell you in the app or by email before it takes effect. If a change requires your consent, we will ask for it.</p>
+
+    <h2 id="contact">18. Contact and privacy officer</h2>
+    <p>The person responsible for the protection of personal information at Beacon, including for the purposes of Quebec Law 25, is the founder of Beacon. You can reach the privacy officer through the <a href="/support/">support form</a> by choosing "Privacy request". Beacon is operated by its founder from Toronto, Ontario, Canada.</p>
+    <!-- Owner: add the privacy officer's name or title and a mailing address here if available (recommended for Quebec Law 25, which requires the officer's title and contact information to be published). -->
+    </div>
+  </main>
+  <footer class="site-foot">
+    <nav aria-label="Site">
+      <a href="/">Home</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/guidelines/">Community Guidelines</a>
+      <a href="/support/">Support</a>
+      <a href="/delete-account/">Delete account</a>
+    </nav>
+    <p>Beacon is operated from Toronto, Ontario, Canada.</p>
+  </footer>
+</div>
+</body>
+</html>

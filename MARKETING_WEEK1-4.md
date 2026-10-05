@@ -1,5 +1,7 @@
 # Beacon: Week 1-4 Marketing Execution Playbook
 
+Offer rule: the only referral reward is earlier access (matches the published Terms). No "free premium", no prizes, no invented stats or testimonials in any creative or ad.
+
 **Status:** Live at https://openfieldwaitlist.netlify.app | Target: 500 signups + 25 hosts by Oct 25
 
 ---
@@ -69,7 +71,7 @@ We built Beacon - find pickup sports near you in 60 seconds.
 
 We're in Toronto beta starting Oct 19, and we need 5 hosts to run the first games.
 
-Early access + your own referral code. Top referrers get free premium.
+Early access + your own referral code. Top referrers get the first invites.
 
 In? → [openfieldwaitlist.netlify.app?ref=HOST_ABC123]
 
@@ -118,7 +120,7 @@ See who's playing. Message them. Join.
 [QR CODE] →
 openfieldwaitlist.netlify.app
 
-Top referrers get free premium year.
+Top referrers get the first invites.
 ```
 
 **Cost:** $65 for 150 flyers
@@ -180,7 +182,7 @@ CTA: Beacon - find your game in 60 seconds
 **Video 2: "The Solution" (30 sec)**
 ```
 DEMO: User opens app → sees soccer 2km away → taps → sees 4 players → messages → joins
-CTA: Top 100 referrers get free premium
+CTA: Top 100 referrers get the first invites
 ```
 
 **Video 3: "Real Players" (15 sec)**
@@ -224,7 +226,7 @@ Beacon launches Oct 19 in Toronto. We're building a way to find pickup sports in
 
 Interested in running a named group at launch? [sport + day + time]
 
-We'll give you a dedicated invite code for your community + free premium.
+We'll give you a dedicated invite code for your community and early access.
 
 Interested? Reply here or join the waitlist: [link]
 
@@ -255,7 +257,7 @@ You're in the Beacon waitlist. Here's the deal:
 
 We're opening October 19 in Toronto.
 
-Top 100 referrers get priority access + free premium for a year.
+Top 100 referrers get the first invites.
 
 Your referral code: [BEACON_ABC123]
 
@@ -303,10 +305,10 @@ Beacon team
 "Beacon: find your game in 60 seconds."
 
 ### Text: The Ask
-"Join the waitlist. Top referrers get early access + free premium."
+"Join the waitlist. Top referrers get the first invites."
 
 ### Text: The Proof
-"500+ Toronto players waiting. Soccer, basketball, pickleball."
+"[Real waitlist count] Toronto players waiting. Soccer, basketball, pickleball." Use the live Netlify count only; never round up or invent a number.
 
 ---
 

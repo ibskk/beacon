@@ -1,0 +1,345 @@
+<!doctype html>
+<!-- Owner: add legal business name and mailing address here before app submission (CASL/Apple) -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Terms of Service | Beacon</title>
+<meta name="description" content="Beacon Terms of Service and End User License Agreement, including community rules, safety, and referral program rules.">
+<meta name="theme-color" content="#F2F4F6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23B5F000'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --page: #F2F4F6; --card: #FFFFFF; --ink: #0B0C0E; --ink2: #3F444B; --ink3: #6E747D;
+    --line: #DDE1E6; --soft: #F1F2F4; --lime: #B5F000; --lime2: #9EE000; --warn: #C4321C;
+    color-scheme: light;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--page); }
+  body {
+    min-height: 100vh; padding: 40px 16px 56px; color: var(--ink);
+    font: 16px/1.65 Inter, -apple-system, system-ui, sans-serif; -webkit-font-smoothing: antialiased;
+    overflow-wrap: break-word;
+  }
+  :focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .skip { position: absolute; left: 16px; top: -60px; padding: 8px 14px; border-radius: 10px; background: var(--ink); color: #fff; font-weight: 600; text-decoration: none; z-index: 10; }
+  .skip:focus { top: 12px; }
+  .wrap { width: 100%; max-width: 760px; margin: 0 auto; }
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 0 16px; }
+  .brand {
+    display: inline-flex; align-items: center; gap: 9px; height: 32px; padding: 0 14px;
+    border-radius: 999px; background: var(--card); color: var(--ink); font-weight: 600; font-size: 14px; text-decoration: none;
+  }
+  .brand i { width: 11px; height: 11px; border-radius: 50%; background: var(--lime); }
+  .back { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--ink2); text-decoration: none; }
+  .back:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+  .back svg { width: 16px; height: 16px; }
+  .card {
+    background: var(--card); border-radius: 28px; padding: 44px 44px 40px;
+    box-shadow: 0 1px 2px rgba(10,20,30,.04), 0 24px 60px -20px rgba(10,20,30,.14);
+  }
+  .eyebrow { margin: 0 0 8px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink2); }
+  h1 { margin: 0 0 10px; font-size: 34px; line-height: 1.12; font-weight: 800; letter-spacing: -0.025em; }
+  .meta { margin: 0 0 28px; font-size: 14px; color: var(--ink2); }
+  .lead { font-size: 17px; color: var(--ink); }
+  h2 { margin: 40px 0 10px; font-size: 21px; line-height: 1.3; font-weight: 800; letter-spacing: -0.015em; scroll-margin-top: 16px; }
+  h3 { margin: 26px 0 6px; font-size: 16px; line-height: 1.4; font-weight: 700; }
+  p, ul, ol, dl { margin: 0 0 14px; }
+  ul, ol { padding-left: 22px; }
+  li { margin: 0 0 6px; }
+  li::marker { color: var(--ink3); }
+  strong { font-weight: 700; }
+  a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+  .prose { color: var(--ink2); }
+  .prose strong, .prose h2, .prose h3 { color: var(--ink); }
+  .note { margin: 0 0 18px; padding: 16px 18px; border-radius: 16px; background: var(--soft); color: var(--ink); }
+  .note p:last-child, .note ul:last-child { margin-bottom: 0; }
+  .note.alert { background: #FFF4EF; border: 1px solid #F3C7B6; }
+  .caps { text-transform: uppercase; font-size: 14px; letter-spacing: .01em; }
+  .toc { margin: 0 0 8px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 16px; }
+  .toc h2 { margin: 0 0 8px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink2); }
+  .toc ol { margin: 0; padding-left: 20px; columns: 2; column-gap: 28px; font-size: 14px; }
+  .toc li { margin: 0 0 4px; break-inside: avoid; }
+  .tbl { width: 100%; border-collapse: collapse; margin: 0 0 18px; font-size: 14px; }
+  .tbl th, .tbl td { text-align: left; vertical-align: top; padding: 10px 10px 10px 0; border-bottom: 1px solid var(--line); }
+  .tbl th { font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); }
+  .tbl td:first-child { font-weight: 600; color: var(--ink); width: 34%; }
+  details { border-bottom: 1px solid var(--line); }
+  details:first-of-type { border-top: 1px solid var(--line); }
+  summary { cursor: pointer; padding: 14px 0; font-weight: 600; color: var(--ink); list-style-position: outside; }
+  details > div { padding: 0 0 14px; }
+  .steps { counter-reset: s; list-style: none; padding: 0; }
+  .steps li { counter-increment: s; position: relative; padding-left: 40px; margin-bottom: 12px; min-height: 28px; }
+  .steps li::before {
+    content: counter(s); position: absolute; left: 0; top: 0; width: 28px; height: 28px; border-radius: 50%;
+    background: var(--lime); color: var(--ink); font-weight: 800; font-size: 14px; display: grid; place-items: center;
+  }
+
+  /* forms */
+  form { margin: 8px 0 0; }
+  .f { margin-bottom: 16px; }
+  .f label, .lbl { display: block; margin-bottom: 8px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); }
+  .in {
+    width: 100%; height: 44px; padding: 0 15px; border: 1px solid var(--line); border-radius: 12px;
+    background: #fff; font: 400 15px Inter, system-ui, sans-serif; color: var(--ink); outline: none;
+  }
+  textarea.in { height: auto; min-height: 140px; padding: 12px 15px; line-height: 1.5; resize: vertical; }
+  .in::placeholder { color: var(--ink3); }
+  .in:focus { border-color: var(--ink); box-shadow: 0 0 0 1px var(--ink), 0 0 0 4px color-mix(in srgb, var(--lime) 55%, transparent); }
+  select.in {
+    appearance: none; -webkit-appearance: none; cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M0 0h10L5 6z' fill='%230B0C0E'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 16px center; background-size: 10px;
+  }
+  .chk { display: flex; align-items: flex-start; gap: 10px; margin: 4px 0 20px; font-size: 14px; color: var(--ink2); cursor: pointer; }
+  .chk input { flex: none; width: 17px; height: 17px; margin: 3px 0 0; accent-color: var(--ink); }
+  .hint { margin: 6px 0 0; font-size: 13px; color: var(--ink2); }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; width: 100%; height: 44px; border: 0; border-radius: 12px; cursor: pointer;
+    background: linear-gradient(90deg, var(--lime), var(--lime2)); color: var(--ink); text-decoration: none;
+    font: 700 15px Inter, system-ui, sans-serif;
+    box-shadow: 0 10px 24px -10px rgba(158,224,0,.8); transition: transform .1s, filter .15s;
+  }
+  .btn:hover { filter: brightness(1.04); }
+  .btn:active { transform: translateY(1px); }
+  .hp { position: absolute; left: -9999px; }
+
+  /* small centered status pages */
+  .status { text-align: center; }
+  .status h1 { font-size: 28px; }
+  .status p { color: var(--ink2); }
+  .status .btn { margin-top: 10px; }
+  .check { width: 56px; height: 56px; margin: 0 auto 16px; border-radius: 50%; background: var(--lime); display: grid; place-items: center; }
+  .check svg { width: 26px; height: 26px; }
+
+  /* footer */
+  .site-foot { margin-top: 24px; text-align: center; font-size: 13px; color: var(--ink2); }
+  .site-foot nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 18px; margin-bottom: 8px; }
+  .site-foot a { color: var(--ink2); }
+  .site-foot a:hover { color: var(--ink); }
+  .site-foot p { margin: 0; }
+
+  @media (max-width: 600px) {
+    body { padding: 16px 12px 40px; font-size: 15.5px; }
+    .card { padding: 30px 20px 28px; border-radius: 24px; }
+    h1 { font-size: 28px; }
+    h2 { font-size: 19px; margin-top: 34px; }
+    .toc ol { columns: 1; }
+    .tbl, .tbl tbody, .tbl tr, .tbl td { display: block; width: 100%; }
+    .tbl thead { position: absolute; left: -9999px; }
+    .tbl tr { padding: 10px 0; border-bottom: 1px solid var(--line); }
+    .tbl td { padding: 2px 0; border: 0; }
+    .tbl td:first-child { width: 100%; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="top">
+      <a class="brand" href="/"><i aria-hidden="true"></i>Beacon</a>
+      <a class="back" href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>Back to home</a>
+  </header>
+  <main class="card" id="main">
+    <p class="eyebrow">Legal</p>
+    <h1>Terms of Service and End User License Agreement</h1>
+    <p class="meta">Last updated October 4, 2026</p>
+
+    <div class="prose">
+    <p class="lead">These Terms are an agreement between you and Beacon. They apply to the Beacon mobile app, the Beacon website and waitlist, and the referral program (together, the "Service"). Please read them carefully. By creating an account, using the app, or joining the waitlist, you agree to these Terms, our <a href="/privacy/">Privacy Policy</a> and our <a href="/guidelines/">Community Guidelines</a>.</p>
+
+    <div class="note alert">
+      <p><strong>Important points</strong></p>
+      <ul>
+        <li>You must be 18 or older.</li>
+        <li>There is no tolerance for objectionable content or abusive users. We remove offending content and remove users who break these rules.</li>
+        <li>Sports involve a risk of injury. You take part in games at your own risk, and Section 10 limits Beacon's responsibility for what happens at games.</li>
+      </ul>
+    </div>
+
+    <nav class="toc" aria-labelledby="toc-title">
+      <h2 id="toc-title">On this page</h2>
+      <ol>
+        <li><a href="#about">About Beacon</a></li>
+        <li><a href="#eligibility">Eligibility</a></li>
+        <li><a href="#account">Your account</a></li>
+        <li><a href="#service">The Service</a></li>
+        <li><a href="#zero-tolerance">Zero tolerance policy</a></li>
+        <li><a href="#moderation">Reporting and moderation</a></li>
+        <li><a href="#prohibited">Prohibited conduct</a></li>
+        <li><a href="#content">Your content</a></li>
+        <li><a href="#hosts">Hosting games and groups</a></li>
+        <li><a href="#risk">Meetups and assumption of risk</a></li>
+        <li><a href="#referral-rules">Referral program rules</a></li>
+        <li><a href="#license">License to use the app</a></li>
+        <li><a href="#app-stores">Apple and Google terms</a></li>
+        <li><a href="#disclaimers">Disclaimers</a></li>
+        <li><a href="#liability">Limitation of liability</a></li>
+        <li><a href="#indemnity">Indemnity</a></li>
+        <li><a href="#termination">Termination</a></li>
+        <li><a href="#law">Governing law</a></li>
+        <li><a href="#changes">Changes to these Terms</a></li>
+        <li><a href="#general">General</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="about">1. About Beacon</h2>
+    <p>Beacon helps adults find, join and host casual pickup games and groups. Beacon is operated from Toronto, Ontario, Canada. In these Terms, "Beacon", "we", "us" and "our" mean the operator of the Service, and "you" means the person using it.</p>
+
+    <h2 id="eligibility">2. Eligibility</h2>
+    <ul>
+      <li>You must be at least 18 years old to join the waitlist, create an account or use the app.</li>
+      <li>You must give your true date of birth. Accounts with false age information will be terminated.</li>
+      <li>You may have only one account, and you may not create an account if we have previously removed you from the Service.</li>
+      <li>You must be legally able to enter into this agreement and not be barred from using the Service under any applicable law.</li>
+    </ul>
+
+    <h2 id="account">3. Your account</h2>
+    <ul>
+      <li>Keep your password secure and do not share your account. You are responsible for activity on your account.</li>
+      <li>Keep your email address current so we can reach you about your account.</li>
+      <li>Your display name must not impersonate anyone or be offensive.</li>
+      <li>Tell us promptly through the <a href="/support/">support form</a> if you believe your account has been accessed without your permission.</li>
+    </ul>
+
+    <h2 id="service">4. The Service</h2>
+    <p>Beacon is a tool for finding and organising games. We do not organise, supervise, referee or insure games, and we do not employ hosts or players. We may add, change or remove features, and we may suspend the Service for maintenance or for safety reasons.</p>
+    <p>The Service is currently free. There are no payments, purchases or subscriptions in the app. If we introduce paid features, we will tell you first and they will be subject to additional terms you can review before paying.</p>
+
+    <h2 id="zero-tolerance">5. Zero tolerance for objectionable content and abusive users</h2>
+    <p><strong>Beacon has zero tolerance for objectionable content and abusive users.</strong> Objectionable content includes harassment, bullying, threats, hate speech or discrimination, sexual or sexually suggestive content, violent or graphic content, content involving minors, scams, spam, and sharing another person's private information. Abusive users include anyone who harasses, threatens, intimidates, exploits or endangers other users, online or at a game.</p>
+    <p>You must accept these Terms, including this zero tolerance policy, before you can create an account. If you post objectionable content or behave abusively, we will remove the content and may suspend or permanently terminate your account without notice.</p>
+
+    <h2 id="moderation">6. Reporting, blocking and moderation</h2>
+    <ul>
+      <li><strong>Filtering.</strong> Messages are automatically checked against a content filter. Messages that fail the filter are not posted. New members have limits on posting links and phone numbers.</li>
+      <li><strong>Reporting.</strong> You can report any message, user, game or group from inside the app. Messages that receive multiple reports are hidden automatically while we review them.</li>
+      <li><strong>Blocking.</strong> You can block any user. Blocking hides that user's messages, games and groups from you.</li>
+      <li><strong>Review within 24 hours.</strong> We review reports within 24 hours. We will remove content that breaks these Terms or our Community Guidelines and will remove (eject) the user who posted it, by suspending or terminating their account, where appropriate.</li>
+      <li><strong>Our discretion.</strong> We may remove any content or restrict any account that we reasonably believe breaks these Terms, puts anyone at risk, or exposes Beacon or others to legal liability. Hosts may also remove members from their groups.</li>
+      <li><strong>Appeals.</strong> If you believe we made a mistake, contact us through the <a href="/support/">support form</a>.</li>
+    </ul>
+    <p>If anyone is in immediate danger, call 911 or your local emergency number first.</p>
+
+    <h2 id="prohibited">7. Prohibited conduct</h2>
+    <p>You must not:</p>
+    <ul>
+      <li>post or send objectionable content, as described in Section 5, or anything illegal;</li>
+      <li>harass, threaten, stalk, intimidate or discriminate against anyone;</li>
+      <li>share another person's personal information, such as their address, phone number or photos, without their permission;</li>
+      <li>impersonate any person or misrepresent your age, identity or affiliation;</li>
+      <li>use Beacon for dating, solicitation, commercial advertising, selling, fundraising or spam;</li>
+      <li>create fake games, groups, accounts or referrals;</li>
+      <li>scam or defraud anyone, or ask other users for money or financial information;</li>
+      <li>arrive at a game intoxicated, behave violently, or play in a way that deliberately endangers others;</li>
+      <li>scrape, copy, reverse engineer, overload, interfere with or try to gain unauthorised access to the Service or other users' data, except as permitted by law; or</li>
+      <li>help or encourage anyone else to do any of the above.</li>
+    </ul>
+
+    <h2 id="content">8. Your content</h2>
+    <p>You own the content you post, such as messages, game and group names, and descriptions ("User Content"). You give Beacon a non-exclusive, worldwide, royalty-free license to host, store, display and transmit your User Content only as needed to operate, secure and improve the Service. This license ends when your content is deleted, except for copies kept in backups for a limited time or anonymised safety records as described in our <a href="/privacy/">Privacy Policy</a>.</p>
+    <p>You are responsible for your User Content and confirm that you have the right to post it and that it follows these Terms. We do not pre-approve User Content and are not responsible for content posted by users.</p>
+
+    <h2 id="hosts">9. Hosting games and groups</h2>
+    <p>If you host a game or create a group, you are responsible for it. In particular, you agree to:</p>
+    <ul>
+      <li>give accurate details about the venue, time, level and number of spots, and update or cancel the game if plans change;</li>
+      <li>choose public venues that are suitable and open for the activity;</li>
+      <li>obtain any permit, booking or permission the venue requires. For example, organised use of City of Toronto sports fields and some courts requires a permit from the City. Beacon does not obtain permits for you;</li>
+      <li>follow venue rules, posted signs, capacity limits and the instructions of venue staff;</li>
+      <li>cancel or end a game if weather, field conditions or other circumstances make it unsafe; and</li>
+      <li>apply game and group settings, such as age and gender rules, fairly and in line with applicable law and our Community Guidelines.</li>
+    </ul>
+
+    <h2 id="risk">10. Meetups at your own risk: assumption of risk and release</h2>
+    <p>Beacon connects people who want to play sports together. Games and meetups take place offline, between users, at venues Beacon does not own, operate or control.</p>
+    <ul>
+      <li><strong>Risk of injury.</strong> Playing sports involves inherent risks, including collisions, falls, strains, fractures, concussion, heat illness, other serious injury and, rarely, death. You are responsible for deciding whether you are fit to play, for using appropriate equipment, and for knowing your limits.</li>
+      <li><strong>Other users.</strong> Beacon does not conduct background checks or verify the identity, skill or conduct of users beyond the checks described in our Privacy Policy. You are responsible for your own interactions with other users. Meet in public places, tell someone where you are going, and leave if you feel unsafe.</li>
+      <li><strong>Venues and conditions.</strong> Beacon is not responsible for the condition, safety, availability, permits or rules of any venue, or for weather or field conditions.</li>
+    </ul>
+    <p class="caps"><strong>To the fullest extent permitted by law, you voluntarily assume all risks of taking part in games, groups and meetups arranged through Beacon, and you release Beacon and its operators, employees, contractors and agents from all claims, demands and losses arising from your participation, including claims for personal injury, illness, death or property damage, and claims arising from the acts or omissions of other users, hosts, venues or third parties.</strong></p>
+    <p>This release does not apply to the extent a claim arises from Beacon's gross negligence or intentional misconduct, or where a release is not permitted by applicable law, including consumer protection law in your province or country.</p>
+
+    <h2 id="referral-rules">11. Referral program rules</h2>
+    <p>Before launch, waitlist members can share a personal invite link to move up the list. These rules apply:</p>
+    <ul>
+      <li><strong>One account per person.</strong> Each person may join the waitlist once, with one email address.</li>
+      <li><strong>Valid referrals only.</strong> A referral is valid when a different, real person aged 18 or older joins the waitlist through your link with their own email address.</li>
+      <li><strong>Fake and self-referrals are void.</strong> Referrals using fake, disposable or duplicate email addresses, referring yourself, automated sign-ups, or any other manipulation will be voided, and we may remove the accounts involved from the waitlist.</li>
+      <li><strong>The reward is early access.</strong> The waitlist members with the most valid referrals in each city receive the first invites when Beacon opens there. Referrals do not earn cash, gift cards, prizes or anything else of monetary value.</li>
+      <li><strong>Our decision is final.</strong> We decide whether a referral is valid, and we may change or end the referral program at any time by updating these Terms.</li>
+      <li><strong>Sharing responsibly.</strong> Share your link only with people who would welcome it. Do not spam, post it in places that prohibit promotion, or send it to people who have not agreed to receive messages from you.</li>
+    </ul>
+
+    <h2 id="license">12. License to use the app</h2>
+    <p>Beacon and its licensors own the app, the website, and all related software, designs, text, graphics, logos and trademarks, excluding User Content. Subject to these Terms, we grant you a limited, personal, non-exclusive, non-transferable, revocable license to download and use the app on devices you own or control, for your own non-commercial use. You may not copy, modify, distribute, sell, lease, sublicense, or create derivative works of the app, or reverse engineer or attempt to extract its source code, except where the law expressly allows it despite this restriction.</p>
+
+    <h2 id="app-stores">13. Apple and Google terms</h2>
+    <h3>If you downloaded the app from Apple's App Store</h3>
+    <p>The following terms apply in addition to the rest of these Terms. If there is a conflict, these terms govern for your use of the iOS app.</p>
+    <ol>
+      <li><strong>Acknowledgement.</strong> These Terms are concluded between you and Beacon only, and not with Apple Inc. ("Apple"). Beacon, not Apple, is solely responsible for the app and its content.</li>
+      <li><strong>Scope of license.</strong> The license granted to you for the app is limited to a non-transferable license to use the app on any Apple-branded products that you own or control, as permitted by the Usage Rules in the Apple Media Services Terms and Conditions, except that the app may be accessed and used by other accounts associated with you through Family Sharing or volume purchasing.</li>
+      <li><strong>Maintenance and support.</strong> Beacon is solely responsible for providing any maintenance and support services for the app, as described in these Terms or as required by applicable law. Apple has no obligation whatsoever to furnish any maintenance and support services with respect to the app.</li>
+      <li><strong>Warranty.</strong> Beacon is solely responsible for any product warranties, whether express or implied by law, to the extent not effectively disclaimed. If the app fails to conform to any applicable warranty, you may notify Apple, and Apple will refund the purchase price, if any, for the app to you. To the maximum extent permitted by applicable law, Apple will have no other warranty obligation whatsoever with respect to the app, and any other claims, losses, liabilities, damages, costs or expenses attributable to any failure to conform to any warranty will be Beacon's sole responsibility.</li>
+      <li><strong>Product claims.</strong> Beacon, not Apple, is responsible for addressing any claims by you or any third party relating to the app or your possession and use of it, including: (i) product liability claims; (ii) any claim that the app fails to conform to any applicable legal or regulatory requirement; and (iii) claims arising under consumer protection, privacy or similar legislation. These Terms do not limit Beacon's liability to you beyond what is permitted by applicable law.</li>
+      <li><strong>Intellectual property rights.</strong> In the event of any third-party claim that the app or your possession and use of it infringes that third party's intellectual property rights, Beacon, not Apple, will be solely responsible for the investigation, defence, settlement and discharge of any such claim.</li>
+      <li><strong>Legal compliance.</strong> You represent and warrant that (i) you are not located in a country that is subject to a U.S. Government embargo, or that has been designated by the U.S. Government as a "terrorist supporting" country; and (ii) you are not listed on any U.S. Government list of prohibited or restricted parties.</li>
+      <li><strong>Developer contact.</strong> Questions, complaints or claims about the app should be directed to Beacon through the <a href="/support/">support form</a>. Beacon is operated from Toronto, Ontario, Canada.</li>
+      <li><strong>Third-party terms.</strong> You must comply with applicable third-party terms of agreement when using the app, such as your wireless data service agreement.</li>
+      <li><strong>Third-party beneficiary.</strong> Apple and Apple's subsidiaries are third-party beneficiaries of these Terms, and upon your acceptance of these Terms, Apple will have the right (and will be deemed to have accepted the right) to enforce these Terms against you as a third-party beneficiary.</li>
+    </ol>
+    <h3>If you downloaded the app from Google Play</h3>
+    <p>These Terms are between you and Beacon, not Google LLC. Your use of Google Play is also subject to Google's own terms. Google is not responsible for the app or its content.</p>
+
+    <h2 id="disclaimers">14. Disclaimers</h2>
+    <p class="caps">To the fullest extent permitted by law, the Service is provided "as is" and "as available", without warranties of any kind, whether express or implied, including implied warranties of merchantability, fitness for a particular purpose, title and non-infringement. Beacon does not warrant that the Service will be uninterrupted, secure or error-free, that game, venue or map information is accurate or current, or that any game will take place as listed.</p>
+
+    <h2 id="liability">15. Limitation of liability</h2>
+    <p class="caps">To the fullest extent permitted by law, Beacon and its operators, employees, contractors and agents will not be liable for any indirect, incidental, special, consequential, exemplary or punitive damages, or for any loss of profits, data, goodwill or enjoyment, arising out of or relating to the Service, games, meetups or other users, even if advised of the possibility of such damages. To the fullest extent permitted by law, Beacon's total liability for all claims relating to the Service is limited to one hundred Canadian dollars (CAD $100).</p>
+    <p>Some jurisdictions do not allow the exclusion or limitation of certain warranties or damages. Nothing in these Terms excludes or limits liability that cannot be excluded or limited under applicable law, or any rights you have as a consumer that cannot be waived, including under the Ontario <em>Consumer Protection Act</em> or the Quebec <em>Consumer Protection Act</em>.</p>
+
+    <h2 id="indemnity">16. Indemnity</h2>
+    <p>To the extent permitted by law, you agree to indemnify and hold harmless Beacon and its operators, employees, contractors and agents from claims, losses and reasonable legal fees brought by third parties arising from your User Content, your conduct at games or meetups, or your breach of these Terms or the law.</p>
+
+    <h2 id="termination">17. Termination</h2>
+    <p>You can stop using the Service at any time and delete your account in the app under Profile, then Delete account, or through the <a href="/delete-account/">account deletion page</a>. We may suspend or terminate your account or access to the Service at any time, with or without notice, if you break these Terms, if we are required to by law, or to protect users or the Service. Sections that by their nature should survive termination, including Sections 8, 10, 14, 15, 16, 18 and 20, survive.</p>
+
+    <h2 id="law">18. Governing law and disputes</h2>
+    <p>These Terms are governed by the laws of the Province of Ontario and the federal laws of Canada that apply there, without regard to conflict of law rules. Subject to any rights you have under the consumer protection laws of the place where you live, you and Beacon agree to the exclusive jurisdiction of the courts located in Toronto, Ontario for any dispute relating to these Terms or the Service. Before starting a legal claim, please contact us through the <a href="/support/">support form</a> so we can try to resolve the issue informally.</p>
+
+    <h2 id="changes">19. Changes to these Terms</h2>
+    <p>We may update these Terms from time to time. We will change the "Last updated" date at the top and, for significant changes, tell you in the app or by email before the changes take effect. If you keep using the Service after the changes take effect, you accept the updated Terms. If you do not agree, you must stop using the Service and may delete your account.</p>
+
+    <h2 id="general">20. General</h2>
+    <ul>
+      <li>These Terms, together with the Privacy Policy and Community Guidelines, are the entire agreement between you and Beacon about the Service.</li>
+      <li>If any part of these Terms is found unenforceable, the rest remains in effect.</li>
+      <li>Our failure to enforce a provision is not a waiver of our right to do so later.</li>
+      <li>You may not transfer your rights under these Terms. We may transfer ours as part of a merger, acquisition or sale of the Service.</li>
+    </ul>
+
+    <h2 id="contact">21. Contact</h2>
+    <p>Questions about these Terms? Contact us through the <a href="/support/">support form</a>. Beacon is operated from Toronto, Ontario, Canada.</p>
+    </div>
+  </main>
+  <footer class="site-foot">
+    <nav aria-label="Site">
+      <a href="/">Home</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/guidelines/">Community Guidelines</a>
+      <a href="/support/">Support</a>
+      <a href="/delete-account/">Delete account</a>
+    </nav>
+    <p>Beacon is operated from Toronto, Ontario, Canada.</p>
+  </footer>
+</div>
+</body>
+</html>
